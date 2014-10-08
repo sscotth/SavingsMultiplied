@@ -35,6 +35,12 @@ body > section, header > section, nav#authentication, footer {
   clear: right;
 }
 
+@media screen and (max-width: 700px){
+  body > section, header > section, nav#authentication, footer {
+    margin: 0 2em;
+  }
+}
+
 nav#main, footer {
   text-align: center;
 }
@@ -72,14 +78,32 @@ ul#children * {
   max-width: 100%;
 }
 
+ul#social {
+  list-style-type: none;
+  padding: 0;
+}
+
 ul#social li {
   display: inline-block;
   width: 20%;
   margin-right: 5%;
-  height: 3em;
-  background-color: #ccc;
 }
-ul#social li:last-child {
+ul#social img {
+  max-width: 100%;
+}
+ul#social li:nth-child(4n) {
   margin-right: 0;
 }
 
+@media screen and (max-width: 700px){
+  ul#social li {
+    width: 47.5%;
+    margin: 0;
+    float: left;
+  }
+
+  ul#social li:nth-child(odd){
+    clear: left;
+    margin-right: 5%;
+  }
+}
