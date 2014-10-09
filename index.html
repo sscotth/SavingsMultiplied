@@ -98,5 +98,11 @@
     function show(element){
       element.style.display = "block";
     }
+
+    var lightbox = document.querySelector('.lightbox');
+    lightbox.addEventListener('click', function(){
+      hide(document.querySelector('.login-modal'));
+    });
+
   </script>
 </html>
