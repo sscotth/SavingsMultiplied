@@ -77,17 +77,24 @@
       </nav>
     </footer>
     <div class="login-modal">
-      <form>
-        <label>Username</label>
-        <input type="text" placeholder="username">
-        <label>Password</label>
-        <input type="password" placeholder="password">
-        <input type="submit" value="Login">
-        <input type="button" value="Cancel">
-      </form>
+      <div class="lightbox"></div>
+      <div class="login-form">
+        <form>
+          <label>Username</label>
+          <input type="text" placeholder="username">
+          <label>Password</label>
+          <input type="password" placeholder="password">
+          <input type="submit" value="Login">
+          <input type="button" value="Cancel" onclick="hide(document.querySelector('.login-modal'))">
+        </form>
+      </div>
     </div>
   </body>
   <script>
+    function hide(element){
+      element.style.display = "none";
+    }
+
     function show(element){
       element.style.display = "block";
     }

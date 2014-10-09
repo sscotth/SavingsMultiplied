@@ -111,3 +111,23 @@ ul#social li:nth-child(4n) {
 .login-modal {
   display: none;
 }
+
+.lightbox {
+  background: #000;
+  opacity: .5;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login-form {
+  border: 2px solid red;
+  width: 300px;
+  text-align: center;
+  background: #69C4CC;
+  margin: 150px 0 0 -150px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
