@@ -11,7 +11,7 @@
     <header>
       <nav id="authentication">
         <ul>
-          <li><a href="#">sign in</a></li>
+          <li><a href="#" onclick="show(document.querySelector('.login-modal'))">sign in</a></li>
           <li><a href="#">sign up</a></li>
         </ul>
       </nav>
@@ -87,4 +87,9 @@
       </form>
     </div>
   </body>
+  <script>
+    function show(element){
+      element.style.display = "block";
+    }
+  </script>
 </html>
