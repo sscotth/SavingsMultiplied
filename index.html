@@ -11,7 +11,7 @@
     <header>
       <nav id="authentication">
         <ul>
-          <li><a href="#" onclick="show(document.querySelector('.login-modal'))">sign in</a></li>
+          <li><a href="#" class="login">sign in</a></li>
           <li><a href="#">sign up</a></li>
         </ul>
       </nav>
@@ -85,7 +85,7 @@
           <label>Password</label>
           <input type="password" placeholder="password">
           <input type="submit" value="Login">
-          <input type="button" value="Cancel" onclick="hide(document.querySelector('.login-modal'))">
+          <input type="button" value="Cancel">
         </form>
       </div>
     </div>
@@ -99,9 +99,21 @@
       element.style.display = "block";
     }
 
+    var loginModal = document.querySelector('.login-modal');
     var lightbox = document.querySelector('.lightbox');
+    var loginLink = document.querySelector('.login');
+    var cancelButton = document.querySelector('input[value="Cancel"]');
+
     lightbox.addEventListener('click', function(){
-      hide(document.querySelector('.login-modal'));
+      hide(loginModal);
+    });
+
+    cancelButton.addEventListener('click', function(){
+      hide(loginModal);
+    });
+
+    loginLink.addEventListener('click', function(){
+      show(loginModal);
     });
 
   </script>
