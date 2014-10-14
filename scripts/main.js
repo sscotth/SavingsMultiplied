@@ -1,26 +1,35 @@
 document.addEventListener('DOMContentLoaded', function(){
   var loginModal = document.querySelector('.login-modal');
-  var lightbox = document.querySelector('.lightbox');
-  var loginLink = document.querySelector('.login');
-  var cancelButton = document.querySelector('input[value="Cancel"]');
+  var loginModalToggleAreas = document.querySelectorAll(
+    '.lightbox, .login, input[value="Cancel"]'
+  );
 
-  lightbox.addEventListener('click', function(){
-    hide(loginModal);
-  });
-
-  cancelButton.addEventListener('click', function(){
-    hide(loginModal);
-  });
-
-  loginLink.addEventListener('click', function(){
-    show(loginModal);
-  });
+  for (var i = 0; i < loginModalToggleAreas.length; i++){
+    loginModalToggleAreas[i].addEventListener('click', function(){
+      toggle(loginModal);
+    });
+  }
 });
 
-function hide(element){
-  element.style.display = 'none';
-}
+function toggle(element){
+  if (element.classList) {
+    element.classList.toggle('hidden');
+  } else {
+    var classes = element.className.split(' ');
+    var classIndex;
 
-function show(element){
-  element.style.display = 'block';
+    for (var i = 0; i < classes.length; i++) {
+      if (classes[i] === 'hidden') {
+        classIndex = i;
+      }
+    }
+
+    if (classIndex) {
+      classes.splice(classIndex, 1);
+    } else {
+      classes.push('hidden');
+    }
+
+    element.className = classes.join(' ');
+  }
 }
