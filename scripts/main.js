@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', function(){
     '.lightbox, .login, input[value="Cancel"]'
   );
 
+  function toggleLoginModal(){
+    toggle(loginModal);
+  }
+
   for (var i = 0; i < loginModalToggleAreas.length; i++){
-    loginModalToggleAreas[i].addEventListener('click', function(){
-      toggle(loginModal);
-    });
+    loginModalToggleAreas[i].addEventListener('click', toggleLoginModal);
   }
 });
 
